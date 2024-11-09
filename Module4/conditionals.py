@@ -15,4 +15,4 @@ if temeperature > 30
 elif 20 <= temperature 30:
     print("the weather is pleasant")
 else:
-    print("it is a cold day")
+    print("it is a cold dayy")
