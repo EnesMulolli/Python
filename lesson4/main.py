@@ -24,3 +24,17 @@ for num in numbers:  # Loop through each element in the list "numbers"
         maximum = num  # If so, update the maximum value to be the current element in num
 
 print("The maximum value in the list is", maximum)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
