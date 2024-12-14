@@ -1,3 +1,5 @@
+from lesson7.error_handling import fruits
+
 age = 16
 
 age_as_str = str(age)
@@ -32,3 +34,23 @@ b = "3"
 result1 = a * int(b)
 
 print(result1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
