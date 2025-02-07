@@ -1,81 +1,66 @@
 from abc import ABC, abstractmethod
 
-class Shape(ABC):
-    @abstractmethod
-    def area(self):
-        pass
-
-
-class Circle(Shape):
-    def __init__(self, radius):
-        self.radius = radius
-
-
-    def area(self):
-        return 3.14 * self.radius * self.radius
-
-
-
-class Square(Shape):
-    def __init__(self, length):
-        self.length = length
-
-
-    def area(self):
-        return self.length * self.length
-
-circle = Circle(7)
-square = Square(10)
-
-print(circle.area())
-print(square.area())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# class Printable(ABC):
-#
+# class Shape(ABC):
 #     @abstractmethod
-#     def print_info(self):
+#     def area(self):
 #         pass
 #
-# class Book(Printable):
-#     def __init__(self, title, author):
-#         self.title = title
-#         self.author = author
 #
-#     def print_info(self):
-#         print(f"Book: {self.title} by {self.author}")
+# class Circle(Shape):
+#     def __init__(self, radius):
+#         self.radius = radius
 #
-# book = Book("Fuqia e se tashmes", "Ismail Kadare")
-# book.print_info()
+#
+#     def area(self):
+#         return 3.14 * self.radius * self.radius
+#
+#
+#
+# class Square(Shape):
+#     def __init__(self, length):
+#         self.length = length
+#
+#
+#     def area(self):
+#         return self.length * self.length
+#
+# circle = Circle(7)
+# square = Square(10)
+#
+# print(circle.area())
+# print(square.area())
+#
+#
+#
+
+
+
+
+
+
+
+
+
+
+
+
+class Printable(ABC):
+
+    @abstractmethod
+    def print_info(self):
+        pass
+
+class Book(Printable):
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+    def print_info(self):
+        print(f"Book: {self.title} by {self.author}")
+
+book = Book("Fuqia e se tashmes", "Ismail Kadare")
+
+book.print_info()
 
 
 
