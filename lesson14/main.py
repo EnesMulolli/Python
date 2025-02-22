@@ -22,12 +22,6 @@ plt.show()
 
 
 
-
-
-
-
-
-
 # filtered_df = df[df['Average IQ'] >= 100]
 #
 # filtered_df = filtered_df.sort_values(by="Average IQ" ascending=False)
