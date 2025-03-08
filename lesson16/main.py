@@ -1,8 +1,5 @@
 import streamlit as st
 
-from lesson4.loops import user_input
-
-
 #pip install streamlit
 #run streamlit folder/file.py
 
