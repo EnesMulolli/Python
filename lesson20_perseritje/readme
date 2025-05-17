@@ -1,0 +1,1 @@
+ python -m uvicorn lesson20_perseritje.APIs:app --reload
