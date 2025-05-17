@@ -17,4 +17,4 @@ data = {
 
 print(data["name"])
 print(data["address"]["city"])
-print(data["contact"][1])
+print(data["contact"][1]["type"])
