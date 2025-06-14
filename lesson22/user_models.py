@@ -34,7 +34,7 @@ print(user3)
 
 class another_user(BaseModel):
     id: conint(gt=0)
-    name:
+    name: constr()
 
 valid_user = another_user(id=1, name='John')
 print(valid_user)

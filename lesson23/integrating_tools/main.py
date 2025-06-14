@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from models import Developer, Project
+from .models import Developer, Project
 
 app = FastAPI()
 #creating developer API with POST Method

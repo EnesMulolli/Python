@@ -12,7 +12,7 @@ df = pd.DataFrame({
 })
 st.write(df)
 
-books_df = pd.read_csv('lesson18/bestseller.csv')
+books_df = pd.read_csv('lesson19/bestseller.csv')
 st.title("best seilling books in the amazon store")
 st.write("this app shows the best selling books of the amazon store")
 
