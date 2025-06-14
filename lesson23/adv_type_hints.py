@@ -20,3 +20,11 @@ print(process_value("1"))
 def process_anything(value: Any):
     return f"Processed: {value}"
 print(process_anything("Hello"))
+
+'''List Example'''
+def sum_list(number: List[int]) -> int:
+    return sum(number)
+
+numbers: List[int] = [1,2,3]
+result: int = sum_list(numbers)
+print("The result is:", result)
