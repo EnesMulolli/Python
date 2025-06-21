@@ -16,3 +16,13 @@ def create_project(project: Project):
         "message": "Project created successfully",
         "project": project
     }
+
+@app.get("/projects/")
+def get_projects():
+    sample_project = Project(
+        title = "Sample Project",
+        description = "This is a sample project",
+        language= ["Python", "C++"],
+        lead_developer = Developer(name="John", experience=7)
+    )
+    return{"Project": [sample_project]}
