@@ -36,12 +36,24 @@ if st.button("Add a Project"):
 st.header("Project Dashboad")
 if st.button("Get Project"):
     response = requests.get("http://localhost:8000/projects/")
-    project_data = response.json()['projects']
+    project_data = response.json()['project']
     if project_data:
         projects_df = pd.DataFrame(project_data)
 
         st.subheader("Project Overview")
         st.dataframe(projects_df)
+
+        st.subheader("Project Details")
+
+        for project in project_data:
+            st.markdown(f"**Title** {project['title']}")
+            st.markdown(f"**Description** {project['description']}")
+            st.markdown(f"**Language** {', ' .join(project['language'])}")
+            st.markdown(f"**Lead Developer** {project['lead_dev']['name']} with {project['lead_dev']['experience']} yeaes of experience")
+            st.markdown(f"---")
+    else:
+        st.warning("No project found!")
+
 
 
 

@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from .models import Developer, Project
+from models import Developer, Project
 
 app = FastAPI()
 #creating developer API with POST Method
@@ -23,6 +23,6 @@ def get_projects():
         title = "Sample Project",
         description = "This is a sample project",
         language= ["Python", "C++"],
-        lead_developer = Developer(name="John", experience=7)
+        lead_dev = Developer(name="John", experience=7)
     )
-    return{"Project": [sample_project]}
+    return{"project": [sample_project]}
