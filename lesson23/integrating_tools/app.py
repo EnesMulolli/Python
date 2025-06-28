@@ -52,7 +52,7 @@ if st.button("Get Project"):
             st.markdown(f"**Lead Developer** {project['lead_dev']['name']} with {project['lead_dev']['experience']} yeaes of experience")
             st.markdown(f"---")
     else:
-        st.warning("No project found!")
+        st.warning("No project found.!")
 
 
 
