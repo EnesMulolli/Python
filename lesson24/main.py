@@ -4,13 +4,43 @@ connection = sqlite3.connect('example.db')
 
 cursor = connection.cursor()
 
+# cursor.execute('''
+#     CREATE TABLE employees(
+#     id INTEGER PRIMARY KEY AUTOINCREMENT,
+#     name TEXT NOT NULL,
+#     position TEXT NOT NULL,
+#     departament TEXT NOT NULL,
+#     salary REAL
+#     )'''
+# )
+# connection.commit()
+
+# cursor.execute('''
+#     INSERT INTO employees (name, position, departament, salary) VALUES (?, ?, ?, ?)
+# ''', ('John', 'Software Engineer', 'IT', 70000.00),
+# )
+# connection.commit()
+
+
 cursor.execute('''
-    CREATE TABLE employees(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    position TEXT NOT NULL,
-    departament TEXT NOT NULL,
-    salary REAL
-    '''
-               )
+    UPDATE employees SET salary = ? WHERE name = ?
+''', (80000.00, 'John')
 )
+
+connection.commit()
+
+
+cursor.execute('''
+    DELETE FROM employees WHERE id = ?
+''', (3,)
+    )
+
+
+cursor.execute('SELECT * FROM employees')
+
+rows = cursor.fetchall()
+
+for row in rows:
+    print(row)
+
+
