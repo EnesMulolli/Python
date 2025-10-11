@@ -2,13 +2,13 @@ import sqlite3
 from fileinput import close
 from typing import List
 from streamlit import status
-from models.category import Category, CategoryCreate
-from database import get_db_connection
+from ..models.category import Category, CategoryCreate
+from ..database import get_db_connection
 from fastapi import APIRouter, HTTPException
 
 router = APIRouter
 
-@router.get("/categories", response_model=List[Category])
+@router.get("/categories/", response_model=List[Category])
 def get_categories():
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -51,7 +51,7 @@ def update_category(category_id: int, category: CategoryCreate):
     conn = get_db_connection()
     cursor = conn.cursor()
 
-    cursor.execute("UPDATE categories SET name = ? WHERE id = ?". (category.name, category_id))
+    cursor.execute("UPDATE categories SET name = ? WHERE id = ?", (category.name, category_id))
     if cursor.rowcount == 0:
         conn.close()
         raise HTTPException(status_code=404, detail="Category not found!")

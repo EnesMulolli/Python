@@ -13,5 +13,5 @@ class RecipeBase(BaseModel):
 class RecipeCreate(RecipeBase):
     pass
 
-class Recipe(RecipeBasec):
+class Recipe(RecipeBase):
     id: int
