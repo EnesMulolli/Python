@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from database import get_db_connection
 
 load_dotenv()
+
 DATABASE_URL = os.getenv("DATABASE_URL")
 
 app = FastAPI()
@@ -18,29 +19,28 @@ def startup():
     cursor = conn.cursor()
 
     cursor.execute('''
-        CREATE TABLE IF NOT EXISTS categories(
-        id INTEGER PRIMARY KEY AUTO INCREMENT,
-        name TEXT UNIQUE NOT NULL
+        CREATE TABLE IF NOT EXISTS categories (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT UNIQUE NOT NULL
         )
     ''')
 
     cursor.execute('''
-           CREATE TABLE IF NOT EXISTS recipes(
-           id INTEGER PRIMARY KEY AUTO INCREMENT,
-           name TEXT NOT NULL,
-           description TEXT,
-           ingredients TEXT,
-           instruction TEXT,
-           cuisine TEXT,
-           difficulty TEXT,
-           category_id INTEGER,
-           FOREIGN KEY (category_id) REFERENCES categories (id)
-           )
-       ''')
+            CREATE TABLE IF NOT EXISTS recipes (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT NOT NULL,
+                description TEXT,
+                ingredients TEXT,
+                instructions TEXT,
+                cuisine TEXT,
+                difficulty TEXT,
+                category_id INTEGER,
+                FOREIGN KEY (category_id) REFERENCES categories (id)
+            )
+        ''')
 
     conn.commit()
     conn.close()
-
 
 @app.get('/')
 def read_root():
