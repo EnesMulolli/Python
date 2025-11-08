@@ -177,7 +177,7 @@ elif selected_menu == "Manage Recipes":
                         st.success(f"Recipe '{selected_recipe['name']}' deleted successfully")
             else:
                 st.info("No recipes available to manage.")
-            elif selected_menu == "Manage Categories":
+elif selected_menu == "Manage Categories":
             st.header("Manage Categories")
 
             st.subheader("Add a New Category")
