@@ -1,7 +1,7 @@
 from typing import List, Optional
 import sqlite3
-from models import Item
-from database import get_db_connection
+from .models import Item
+from .database import get_db_connection
 
 def create_item(item: Item) -> Item:
     conn = get_db_connection()
@@ -16,7 +16,7 @@ def get_items() -> List[Item]:
     conn = get_db_connection()
     items = conn.execute("SELECT * FROM items").fetchall()
     conn.close()
-    return [Item(**dict(item) for item in items)]
+    return [Item(**dict(item)) for item in items]
 
 def get_item(item_id: int) -> Optional[Item]:
     conn = get_db_connection()
